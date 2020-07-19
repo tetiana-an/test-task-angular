@@ -1,0 +1,26 @@
+.content {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+
+  .card {
+    margin-bottom: 5%;
+    width: 20rem;
+
+    h5 {
+      text-align: center;
+    }
+
+    .card-img-top {
+      padding: 5%;
+    }
+
+    .btn {
+      float: right;
+    }
+
+    .price {
+      border-top: 2px solid rgba(0, 0, 0, 0.1);
+    }
+  }
+}

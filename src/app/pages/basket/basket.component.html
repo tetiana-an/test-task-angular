@@ -1,0 +1,41 @@
+<div class="content">
+  <div class="emptyCart" *ngIf="!orders.length">
+    <h1>Shopping Cart</h1>
+    <p>Your cart is currently empty</p>
+    <button class="btn btn-outline-dark" id="btn" [routerLink]="[ '/shop' ]">return to shop</button>
+  </div>
+  <div class="ordersTable" *ngIf="orders.length">
+    <table class="table">
+      <thead>
+        <th></th>
+        <th>Product</th>
+        <th>Price</th>
+        <th style="width: 12%">Quantity</th>
+        <th>Subtotal</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders; let i=index">
+          <td class="delete">
+            <div (click)="deleteProd(order)">
+              <img src="../../../assets/images/delete.svg" width="10rem">
+            </div>
+          </td>
+          <td>{{ order?.name | titlecase }}</td>
+          <td>{{ order?.price | currency:'USD' }}</td>
+          <td id="count">
+            <div class="orderCount">
+              <div class="plus" (click)="prodCount(order, false)"></div>
+              <input type="text" [value]="order?.count" class="count" readonly>
+              <div class="minus" (click)="prodCount(order, true)"></div>
+            </div>
+          </td>
+          <td>{{ order?.price * order?.count | currency:'USD' }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="total-price">
+      total:
+      <span>{{ totalPrice | currency:'USD' }}</span>
+    </div>
+  </div>
+</div>

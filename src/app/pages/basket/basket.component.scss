@@ -1,0 +1,78 @@
+.emptyCart {
+  margin: 0 auto;
+  text-align: center;
+
+  >p {
+    color: #c89500;
+    font-style: italic;
+  }
+}
+
+.ordersTable {
+  overflow: hidden;
+
+  * {
+    text-align: center;
+    letter-spacing: 0.5px;
+  }
+
+  #count {
+    max-width: 7%;
+
+    .orderCount {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+
+      .count {
+        height: 1.5rem;
+        width: 1.8rem;
+        font-weight: bold;
+        text-align: center;
+        color: #000;
+        border: 1px solid #aeae98;
+      }
+
+      .plus,
+      .minus {
+        width: 1rem;
+        height: 1rem;
+        background-size: 60%;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+      }
+
+      .plus {
+        background-image: url(../../../assets/images/left.svg);
+      }
+
+      .minus {
+        background-image: url(../../../assets/images/right.svg);
+      }
+
+      span {
+        border: 1px solid lightgrey;
+        border-radius: none;
+      }
+    }
+  }
+
+  .delete {
+    img {
+      cursor: pointer;
+    }
+  }
+
+  .total-price {
+    text-align: end;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 2%;
+
+    span {
+      font-weight: bold;
+      color: #c89500;
+    }
+  }
+}

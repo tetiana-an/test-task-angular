@@ -1,0 +1,11 @@
+<div class="content">
+  <div class="card" *ngFor="let prod of products; let i=index">
+    <img src="{{prod?.img}}" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">{{ prod?.name | titlecase }}</h5>
+      <p class="card-text">{{ prod?.label }}</p>
+      <p class="card-text price">{{ prod?.price | currency:'USD' }}</p>
+      <button class="btn btn-dark" (click)="addBasket(prod)">add to basket</button>
+    </div>
+  </div>
+</div>
